@@ -65,3 +65,14 @@ if ingredients_list:
                 f'Your Smoothie is ordered, {name_on_order}!',
                 icon="✅"
             )
+
+# New section to display SmoothieFroot nutrition information
+smoothiefroot_response = requests.get(
+    "https://my.smoothiefroot.com/api/fruit/watermelon"
+)
+
+sf_df = st.dataframe(
+    data=smoothiefroot_response.json(),
+    use_container_width=True
+)
+
